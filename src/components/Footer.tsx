@@ -33,14 +33,26 @@ export default function Footer() {
               whileHover={{ scale: 1.02 }}
               className="flex items-center gap-sm cursor-pointer inline-flex"
             >
-              <img
-                alt="Logo Prigel Labs"
-                className="h-8 w-8"
-                src="https://lh3.googleusercontent.com/aida/ADBb0ujznjUb-3rN4q3tYmP5SEQ-UXS_oKrzoioPQuAdL4c52zQR0r9ieCP9v-VklctFYYSOQt-mGK9b56wd8dejMHacoiJolUX8ggfnOyL9FOb3-rxTJqhCf0XiBxCrCTJuFhBaTPyg4rBzw85Reap57vw2qT_jI031CQPuzLTm0K5NyzhYKjCTj3RtHkhfOA3ggs1-HsROqh_IGL5Z2an5T6OcVxuVYiFAfVuEIlL9KJ2exRk1RoYa5a878_W3"
-              />
+              <svg className="h-8 w-8 shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="logoGradFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#64ffda" />
+                    <stop offset="100%" stopColor="#00b5ff" />
+                  </linearGradient>
+                  <filter id="logoGlowFooter" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="4" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                </defs>
+                <polygon points="50,5 90,28 90,72 50,95 10,72 10,28" stroke="url(#logoGradFooter)" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" opacity="0.4" />
+                <path d="M35 25 H55 C65 25 72 32 72 40 C72 48 65 55 55 55 H35 V75 M35 48 H53 C57 48 60 45 60 40 C60 35 57 32 53 32 H35 V48" stroke="url(#logoGradFooter)" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" filter="url(#logoGlowFooter)" />
+                <circle cx="50" cy="5" r="4" fill="#64ffda" />
+                <circle cx="90" cy="28" r="3" fill="#00b5ff" />
+                <circle cx="10" cy="72" r="3" fill="#64ffda" />
+              </svg>
               <span className="font-headline-md text-headline-md font-bold text-primary tracking-tight">Prigel Labs Limited</span>
             </motion.div>
-            <p className="font-body-md text-on-surface-variant w-1/2 leading-relaxed">
+            <p className="font-body-md text-on-surface-variant w-full md:w-1/2 leading-relaxed">
               Membangun solusi digital untuk UMKM Indonesia. Membantu bisnis tumbuh lebih cerdas dengan teknologi tepat guna.
             </p>
           </div>

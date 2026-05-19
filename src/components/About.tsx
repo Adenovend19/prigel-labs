@@ -93,7 +93,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             alt="Workspace Prigel Labs" 
             className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC14q9mEcdYHuuIGOnz7Ax2UZgMbM6FJf9QDipsc0VICTJawgO1UwuAN5RlSoo5ecHrXhRY0_aB3M8RprL54YqYLnKpJaSFT5ngxXrDFSxVOS4fUWcQEfW2WUCtFAySkJlKncKCXc2NZPUXiTpwBkKOdL_MoEvsY1dCe-4Wo2qWqyZQzmW8UoQqKU6BdUKA89_mu9Chr08uNRBEBdJL4oM0SaiXk0Q8SL_I0A3_U3SkDOc5N43pyL5B2-_DQvadCayd0bYujkoVIi-8" 
+            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" 
           />
         </motion.div>
 
