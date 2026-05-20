@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { SiteContent } from "@/lib/contentService";
 
-export default function Contact() {
+export default function Contact({ content }: { content: SiteContent["contact"] }) {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
 
@@ -29,16 +30,16 @@ export default function Contact() {
           {/* Left Column: Technical Contact Info */}
           <div className="md:col-span-2 space-y-xl">
             <div>
-              <span className="font-label-md text-primary-fixed tracking-[0.2em] uppercase block mb-md">[ saluran komunikasi ]</span>
-              <h2 className="font-headline-lg text-headline-lg text-primary leading-tight">Hubungi Prigel Labs</h2>
-              {/* <p className="font-body-md text-on-surface-variant mt-md max-w-sm leading-relaxed">
-                Punya pertanyaan tentang produk kami atau ingin berkolaborasi? Kirimkan pesan enkripsi Anda atau hubungi kami langsung.
-              </p> */}
+              <span className="font-label-md text-primary-fixed tracking-[0.2em] uppercase block mb-md">{content.subtitle}</span>
+              <h2 className="font-headline-lg text-headline-lg text-primary leading-tight">{content.title}</h2>
+              <p className="font-body-md text-on-surface-variant mt-md max-w-sm leading-relaxed">
+                {content.desc}
+              </p>
             </div>
 
             <div className="space-y-md">
               <motion.a
-                href="mailto:contact@prigellabs.com"
+                href={`mailto:${content.email}`}
                 whileHover={{ x: 6, borderColor: "rgba(100, 255, 218, 0.4)", backgroundColor: "rgba(21, 31, 55, 0.8)" }}
                 className="flex items-center gap-md p-md bg-surface-container rounded-xl border border-outline-variant/30 transition-all cursor-pointer"
               >
@@ -47,12 +48,12 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs font-label-md uppercase tracking-wider text-primary-fixed/80">surel / email</p>
-                  <p className="font-bold text-primary text-body-md">contact@prigellabs.com</p>
+                  <p className="font-bold text-primary text-body-md">{content.email}</p>
                 </div>
               </motion.a>
 
               <motion.a
-                href="https://wa.me/#"
+                href={`https://wa.me/${content.phone.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(content.whatsappText)}`}
                 target="_blank"
                 whileHover={{ x: 6, borderColor: "rgba(100, 255, 218, 0.4)", backgroundColor: "rgba(21, 31, 55, 0.8)" }}
                 className="flex items-center gap-md p-md bg-surface-container rounded-xl border border-outline-variant/30 transition-all cursor-pointer"
@@ -62,7 +63,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs font-label-md uppercase tracking-wider text-[#00ff88]/80">jalur cepat whatsapp</p>
-                  <p className="font-bold text-primary text-body-md">+62 888-1111-0912</p>
+                  <p className="font-bold text-primary text-body-md">{content.phone}</p>
                 </div>
               </motion.a>
 
@@ -72,7 +73,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs font-label-md uppercase tracking-wider text-[#b52bff]/80">kantor operasional</p>
-                  <p className="font-body-md text-on-surface-variant mt-xs">Yogyakarta, Indonesia</p>
+                  <p className="font-body-md text-on-surface-variant mt-xs whitespace-pre-wrap">{content.address}</p>
                 </div>
               </div>
             </div>

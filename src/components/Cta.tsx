@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { SiteContent } from "@/lib/contentService";
 
-export default function Cta() {
+export default function Cta({ content }: { content: SiteContent["cta"] }) {
   return (
     <section id="cta" className="relative py-[120px] px-margin-mobile md:px-margin-desktop text-center overflow-hidden bg-[#08132a]">
       {/* Animated Radar/Pulse Background */}
@@ -43,21 +44,21 @@ export default function Cta() {
           className="inline-flex items-center gap-2 px-md py-xs rounded-full border border-primary-fixed/30 bg-primary-fixed/10 text-primary-fixed font-label-md text-label-md tracking-widest uppercase shadow-[0_0_20px_rgba(100,255,218,0.2)] backdrop-blur-sm"
         >
           <span className="inline-block w-2 h-2 rounded-full bg-primary-fixed animate-ping"></span>
-          Akselerasi Bisnis
+          {content.label}
         </motion.div>
 
         <motion.h2 
           variants={{ hidden: { opacity: 0, y: 30, filter: "blur(10px)" }, visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: "easeOut" } } }}
           className="font-display-lg-mobile md:font-headline-lg text-display-lg-mobile md:text-headline-lg text-primary glow-cyan leading-tight"
         >
-          Siap Membawa Bisnis Anda ke Level Berikutnya?
+          {content.title}
         </motion.h2>
         
         <motion.p 
           variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
           className="font-body-lg text-on-surface-variant max-w-2xl mx-auto"
         >
-          Gunakan teknologi yang membantu bisnis berkembang lebih efisien dan modern bersama Prigel Labs Limited.
+          {content.desc}
         </motion.p>
         
         <motion.div 
@@ -72,7 +73,7 @@ export default function Cta() {
             className="bg-primary-fixed text-on-primary-fixed px-xl py-md rounded-lg font-label-md font-bold uppercase tracking-widest text-sm transition-all relative overflow-hidden group flex items-center justify-center gap-2"
           >
             <div className="absolute top-0 left-0 w-full h-[2px] bg-white opacity-0 group-hover:opacity-100 group-hover:animate-[scan_1.5s_ease-in-out_infinite]"></div>
-            <span className="relative z-10">Mulai Sekarang</span>
+            <span className="relative z-10">{content.primaryBtn}</span>
             <span className="material-symbols-outlined relative z-10 group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </motion.button>
           
@@ -82,7 +83,7 @@ export default function Cta() {
             className="border border-outline-variant text-primary px-xl py-md rounded-lg font-label-md font-bold uppercase tracking-widest text-sm transition-all flex items-center justify-center gap-2"
           >
             <span className="material-symbols-outlined">chat</span>
-            Konsultasi Gratis
+            {content.secondaryBtn}
           </motion.button>
         </motion.div>
       </motion.div>

@@ -8,22 +8,27 @@ import Testimonials from "@/components/Testimonials";
 import Cta from "@/components/Cta";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { getContent } from "@/lib/contentService";
 
-export default function Home() {
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const content = await getContent();
+
   return (
     <>
       <Header />
       <main>
-        <Hero />
-        <About />
-        <Products />
-        <Vision />
-        <Features />
-        <Testimonials />
-        <Cta />
-        <Contact />
+        <Hero content={content.hero} />
+        <About content={content.about} />
+        <Products content={content.products} />
+        <Vision content={content.vision} />
+        <Features content={content.features} />
+        <Testimonials content={content.testimonials} />
+        <Cta content={content.cta} />
+        <Contact content={content.contact} />
       </main>
-      <Footer />
+      <Footer content={content.footer} />
     </>
   );
 }

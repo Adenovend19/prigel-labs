@@ -38,7 +38,11 @@ const testimonials: TestimonialItem[] = [
   }
 ];
 
-export default function Testimonials() {
+export default function Testimonials({ content }: { content?: any }) {
+  const activeSubtitle = content?.subtitle || "Testimoni";
+  const activeTitle = content?.title || "Dipercaya untuk Mendukung Bisnis Modern";
+  const activeList = content?.list || testimonials;
+
   return (
     <section className="py-xxl bg-[#08132a] relative overflow-hidden" id="testimonials">
       {/* Decorative ambient background glow */}
@@ -52,9 +56,9 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-xxl"
         >
-          <span className="font-label-md text-primary-fixed tracking-[0.2em] uppercase block mb-md">Testimoni</span>
+          <span className="font-label-md text-primary-fixed tracking-[0.2em] uppercase block mb-md">{activeSubtitle}</span>
           <h2 className="font-headline-lg text-headline-lg text-primary leading-tight">
-            Dipercaya untuk Mendukung Bisnis Modern
+            {activeTitle}
           </h2>
         </motion.div>
         
@@ -68,7 +72,7 @@ export default function Testimonials() {
           }}
           className="grid md:grid-cols-3 gap-xl"
         >
-          {testimonials.map((item, i) => (
+          {activeList.map((item: any, i: number) => (
             <motion.div 
               key={i} 
               variants={{ 

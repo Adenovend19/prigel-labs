@@ -2,18 +2,21 @@
 
 import { motion } from "framer-motion";
 
-const stats = [
+const statsDefault = [
   { value: "99.99%", label: "Uptime Sistem", desc: "Infrastruktur cloud tangguh" },
   { value: "15 Menit", label: "Onboarding", desc: "Sangat mudah dipelajari" },
   { value: "24/7", label: "Dukungan Teknis", desc: "Selalu siap mendampingi" }
 ] as const;
 
-const coreValues = [
+const coreValuesDefault = [
   { icon: "bolt", title: "Sederhana & Powerful", desc: "Teknologi canggih yang dikemas dengan antarmuka yang sangat ringkas." },
   { icon: "security", title: "Keamanan Maksimal", desc: "Enkripsi data harian memastikan operasional bisnis Anda aman." }
 ] as const;
 
-export default function About() {
+export default function About({ content }: { content?: any }) {
+  const activeStats = content?.stats || statsDefault;
+  const activeCoreValues = content?.coreValues || coreValuesDefault;
+
   return (
     <section className="py-xxl px-margin-mobile md:px-margin-desktop bg-[#08132a] relative overflow-hidden border-b border-outline-variant/10" id="about">
       {/* Visual background details */}
@@ -31,16 +34,16 @@ export default function About() {
           className="md:col-span-7 space-y-xl text-left"
         >
           <div>
-            <span className="font-label-md text-primary-fixed tracking-[0.25em] uppercase block mb-md">[ profil studio ]</span>
-            <h2 className="font-headline-lg text-headline-lg text-primary leading-tight">Tentang Prigel Labs Limited</h2>
+            <span className="font-label-md text-primary-fixed tracking-[0.25em] uppercase block mb-md">{content?.subtitle || "[ profil studio ]"}</span>
+            <h2 className="font-headline-lg text-headline-lg text-primary leading-tight">{content?.title || "Tentang Prigel Labs Limited"}</h2>
             <p className="font-body-lg text-on-surface-variant leading-relaxed mt-md">
-              Prigel Labs Limited adalah perusahaan pengembang aplikasi inovatif yang berfokus pada digitalisasi UMKM. Kami percaya bahwa teknologi seharusnya mempermudah, bukan mempersulit. Oleh karena itu, kami membangun ekosistem solusi digital yang intuitif namun berkinerja tinggi untuk operasional bisnis harian Anda.
+              {content?.desc || "Prigel Labs Limited adalah perusahaan pengembang aplikasi inovatif yang berfokus pada digitalisasi UMKM. Kami percaya bahwa teknologi seharusnya mempermudah, bukan mempersulit. Oleh karena itu, kami membangun ekosistem solusi digital yang intuitif namun berkinerja tinggi untuk operasional bisnis harian Anda."}
             </p>
           </div>
 
           {/* Futuristic Core Values */}
           <div className="grid sm:grid-cols-2 gap-lg">
-            {coreValues.map((value, i) => (
+            {activeCoreValues.map((value: any, i: number) => (
               <div key={i} className="p-md bg-surface-container rounded-xl border border-outline-variant/20 flex gap-sm items-start">
                 <div className="w-8 h-8 rounded-lg bg-primary-fixed/10 flex items-center justify-center text-primary-fixed shrink-0 mt-0.5">
                   <span className="material-symbols-outlined text-md">{value.icon}</span>
@@ -55,7 +58,7 @@ export default function About() {
 
           {/* High-Tech Metric Counters */}
           <div className="pt-lg border-t border-outline-variant/10 grid grid-cols-3 gap-md">
-            {stats.map((stat, i) => (
+            {activeStats.map((stat: any, i: number) => (
               <div key={i} className="space-y-xs">
                 <p className="font-label-md text-primary-fixed font-bold text-lg md:text-xl tracking-tight">{stat.value}</p>
                 <div className="space-y-0.5">

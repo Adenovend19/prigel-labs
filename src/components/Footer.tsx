@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { SiteContent } from "@/lib/contentService";
 
-export default function Footer() {
+export default function Footer({ content }: { content: SiteContent["footer"] }) {
   const linkVariants = {
     hover: {
       x: 6,
@@ -53,7 +54,7 @@ export default function Footer() {
               <span className="font-headline-md text-headline-md font-bold text-primary tracking-tight">Prigel Labs Limited</span>
             </motion.div>
             <p className="font-body-md text-on-surface-variant w-full md:w-1/2 leading-relaxed">
-              Membangun solusi digital untuk UMKM Indonesia. Membantu bisnis tumbuh lebih cerdas dengan teknologi tepat guna.
+              {content.brandDesc}
             </p>
           </div>
 
@@ -166,7 +167,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-xl border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-md font-body-md text-on-surface-variant text-sm">
-          <p>© 2026 Prigel Labs Limited. Membangun solusi digital untuk UMKM Indonesia.</p>
+          <p>© {new Date().getFullYear()} {content.copyright}</p>
           <div className="flex gap-lg">
             <Link href="#" passHref legacyBehavior>
               <motion.a whileHover={{ color: "var(--color-primary-fixed)" }} className="cursor-pointer transition-colors">Kebijakan Privasi</motion.a>

@@ -1,0 +1,134 @@
+{
+  "hero": {
+    "systemStatus": "Res",
+    "title": "Teknologi Modern untuk Membantu UMKM Bertumbuh Lebih Cepat",
+    "desc": "Prigel Labs Studio mengembangkan ekosistem aplikasi digital untuk membantu UMKM mengelola bisnis dengan lebih mudah, efisien, dan terintegrasi.",
+    "ctaPrimary": "Coba POS Universal",
+    "ctaSecondary": "Hubungi Kami",
+    "footerText": "[ Inisialisasi Modul ]: Sistem kasir modern & solusi bisnis digital."
+  },
+  "about": {
+    "subtitle": "[ profil studio ]",
+    "title": "Tentang Prigel Labs Limited",
+    "desc": "Prigel Labs Limited adalah perusahaan pengembang aplikasi inovatif yang berfokus pada digitalisasi UMKM. Kami percaya bahwa teknologi seharusnya mempermudah, bukan mempersulit. Oleh karena itu, kami membangun ekosistem solusi digital yang intuitif namun berkinerja tinggi untuk operasional bisnis harian Anda.",
+    "coreValues": [
+      {
+        "icon": "bolt",
+        "title": "Sederhana & Powerful",
+        "desc": "Teknologi canggih yang dikemas dengan antarmuka yang sangat ringkas."
+      },
+      {
+        "icon": "security",
+        "title": "Keamanan Maksimal",
+        "desc": "Enkripsi data harian memastikan operasional bisnis Anda aman."
+      }
+    ],
+    "stats": [
+      {
+        "value": "99.99%",
+        "label": "Uptime Sistem",
+        "desc": "Infrastruktur cloud tangguh"
+      },
+      {
+        "value": "15 Menit",
+        "label": "Onboarding",
+        "desc": "Sangat mudah dipelajari"
+      },
+      {
+        "value": "24/7",
+        "label": "Dukungan Teknis",
+        "desc": "Selalu siap mendampingi"
+      }
+    ]
+  },
+  "products": {
+    "subtitle": "Produk Pertama",
+    "title": "POS Universal: Satu Aplikasi Kasir untuk Semua Jenis Usaha",
+    "desc": "POS Universal adalah aplikasi Point of Sale modern yang dirancang untuk berbagai jenis UMKM — mulai dari toko retail, kafe, restoran, hingga usaha rumahan.",
+    "ctaText": "Mulai Gunakan POS Universal",
+    "features": [
+      {
+        "icon": "point_of_sale",
+        "title": "Manajemen Penjualan",
+        "desc": "Catat transaksi dengan cepat dan akurat dalam satu sistem yang mudah digunakan."
+      },
+      {
+        "icon": "analytics",
+        "title": "Laporan Real-time",
+        "desc": "Pantau performa bisnis kapan saja dengan data penjualan yang otomatis diperbarui."
+      },
+      {
+        "icon": "devices",
+        "title": "Multi Device",
+        "desc": "Dapat digunakan di berbagai perangkat untuk fleksibilitas operasional bisnis."
+      },
+      {
+        "icon": "inventory_2",
+        "title": "Manajemen Produk",
+        "desc": "Kelola stok, kategori, dan harga produk dengan lebih praktis."
+      },
+      {
+        "icon": "ads_click",
+        "title": "Mudah Digunakan",
+        "desc": "Interface modern dan sederhana sehingga mudah dipahami oleh semua pengguna."
+      },
+      {
+        "icon": "shield_with_heart",
+        "title": "Aman & Stabil",
+        "desc": "Data bisnis tersimpan dengan aman dan sistem berjalan stabil untuk mendukung operasional harian."
+      }
+    ]
+  },
+  "features": {
+    "subtitle": "Keunggulan",
+    "title": "Kenapa Prigel Labs Limited?",
+    "list": [
+      {
+        "title": "Fokus pada UMKM",
+        "desc": "Kami memahami tantangan bisnis UMKM dan membangun solusi yang relevan."
+      },
+      {
+        "title": "Teknologi Modern",
+        "desc": "Menggunakan teknologi terbaru untuk menghasilkan aplikasi yang cepat, aman, dan scalable."
+      },
+      {
+        "title": "User Friendly",
+        "desc": "Desain aplikasi dibuat sederhana agar mudah digunakan siapa saja."
+      },
+      {
+        "title": "Berkembang Bersama",
+        "desc": "Kami tidak hanya membuat aplikasi, tetapi juga membangun solusi jangka panjang untuk pertumbuhan bisnis."
+      }
+    ]
+  },
+  "testimonials": {
+    "subtitle": "Testimoni",
+    "title": "Dipercaya untuk Mendukung Bisnis Modern",
+    "list": [
+      {
+        "quote": "POS Universal membantu operasional toko retail kami menjadi jauh lebih cepat dan terstruktur. Laporan harian tersaji instan tanpa pusing rekap manual.",
+        "name": "Aditya Pratama",
+        "role": "Owner",
+        "company": "Lumina Cafe & Bistro",
+        "initials": "AP",
+        "gradient": "from-[#00f0ff] to-[#b52bff]"
+      },
+      {
+        "quote": "Sistem kasirnya sangat intuitif dan mudah dipelajari oleh karyawan baru hanya dalam waktu 15 menit. Integrasi multi-cabang berjalan mulus tanpa hambatan.",
+        "name": "Siti Rahma",
+        "role": "Operational Manager",
+        "company": "Glow & Co Cosmetics",
+        "initials": "SR",
+        "gradient": "from-[#ff0055] to-[#b52bff]"
+      },
+      {
+        "quote": "Pelayanan dukungan pelanggan dari tim Prigel Labs sangat responsif. Solusi digital ini benar-benar mempercepat proses digitalisasi bisnis kami.",
+        "name": "Budi Santoso",
+        "role": "Founder",
+        "company": "Sentosa Furniture",
+        "initials": "BS",
+        "gradient": "from-[#00f0ff] to-[#00ff88]"
+      }
+    ]
+  }
+}

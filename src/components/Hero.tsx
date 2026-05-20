@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-export default function Hero() {
+export default function Hero({ content }: { content?: any }) {
   const { scrollY } = useScroll();
   const yBg = useTransform(scrollY, [0, 1000], [0, 300]);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -111,21 +111,21 @@ export default function Hero() {
           className="inline-block px-md py-xs rounded-full border border-primary-fixed/30 bg-primary-fixed/10 text-primary-fixed font-label-md text-label-md mb-md tracking-widest uppercase shadow-[0_0_20px_rgba(100,255,218,0.2)] backdrop-blur-sm"
         >
           <span className="inline-block w-2 h-2 rounded-full bg-primary-fixed animate-pulse mr-2"></span>
-          Sistem Online
+          {content?.systemStatus || "Sistem Online"}
         </motion.div>
         
         <motion.h1 
           variants={futuristicReveal}
           className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary leading-[1.1] tracking-tighter glow-cyan"
         >
-          Teknologi Modern untuk Membantu UMKM Bertumbuh Lebih Cepat
+          {content?.title || "Teknologi Modern untuk Membantu UMKM Bertumbuh Lebih Cepat"}
         </motion.h1>
         
         <motion.p 
           variants={futuristicReveal}
           className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto leading-relaxed"
         >
-          Prigel Labs Studio mengembangkan ekosistem aplikasi digital untuk membantu UMKM mengelola bisnis dengan lebih mudah, efisien, dan terintegrasi.
+          {content?.desc || "Prigel Labs Studio mengembangkan ekosistem aplikasi digital untuk membantu UMKM mengelola bisnis dengan lebih mudah, efisien, dan terintegrasi."}
         </motion.p>
         
         <motion.div 
@@ -139,7 +139,7 @@ export default function Hero() {
           >
             {/* Cyberpunk Glitch scanning line on hover */}
             <div className="absolute top-0 left-0 w-full h-[2px] bg-white opacity-0 group-hover:opacity-100 group-hover:animate-[scan_1.5s_ease-in-out_infinite]"></div>
-            <span className="relative z-10">Coba POS Universal</span>
+            <span className="relative z-10">{content?.ctaPrimary || "Coba POS Universal"}</span>
           </motion.button>
           
           <motion.button 
@@ -147,7 +147,7 @@ export default function Hero() {
             whileTap={{ scale: 0.95 }}
             className="border border-outline-variant text-primary px-xl py-md rounded-lg font-label-md font-bold uppercase tracking-widest text-sm transition-all"
           >
-            Hubungi Kami
+            {content?.ctaSecondary || "Hubungi Kami"}
           </motion.button>
         </motion.div>
         
@@ -157,7 +157,7 @@ export default function Hero() {
           className="pt-xl"
         >
           <p className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant max-w-2xl mx-auto border-t border-outline-variant/30 pt-md">
-            [ Inisialisasi Modul ]: Sistem kasir modern & solusi bisnis digital.
+            {content?.footerText || "[ Inisialisasi Modul ]: Sistem kasir modern & solusi bisnis digital."}
           </p>
         </motion.div>
       </motion.div>

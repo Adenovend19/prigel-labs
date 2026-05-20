@@ -2,51 +2,9 @@
 
 import { motion } from "framer-motion";
 
-interface VisionItem {
-  icon: string;
-  title: string;
-  desc: string;
-  status: "STABLE" | "BETA" | "ROADMAP";
-  statusColor: string;
-  gradient: string;
-}
+import { SiteContent } from "@/lib/contentService";
 
-const visionItems: VisionItem[] = [
-  {
-    icon: "point_of_sale",
-    title: "Manajemen Operasional",
-    desc: "Automasi pencatatan stok barang, manajemen karyawan, dan kelola aktivitas cabang secara real-time.",
-    status: "STABLE",
-    statusColor: "text-[#00ff88] border-[#00ff88]/30 bg-[#00ff88]/10",
-    gradient: "from-[#00f0ff] to-[#b52bff]"
-  },
-  {
-    icon: "account_balance_wallet",
-    title: "Keuangan & Akuntansi",
-    desc: "Pencatatan kas masuk dan keluar secara otomatis, laporan laba rugi instan, serta rekonsiliasi bank.",
-    status: "STABLE",
-    statusColor: "text-[#00ff88] border-[#00ff88]/30 bg-[#00ff88]/10",
-    gradient: "from-[#00f0ff] to-[#00ff88]"
-  },
-  {
-    icon: "query_stats",
-    title: "Analitik Bisnis & AI",
-    desc: "Rekomendasi stok otomatis berbasis kecerdasan buatan (AI) serta prediksi tren penjualan bulanan.",
-    status: "BETA",
-    statusColor: "text-[#00f0ff] border-[#00f0ff]/30 bg-[#00f0ff]/10",
-    gradient: "from-[#ff0055] to-[#b52bff]"
-  },
-  {
-    icon: "contactless",
-    title: "E-Payment & FinTech",
-    desc: "Integrasi sistem QRIS, e-wallet, paylater, dan berbagai kartu debit/kredit tanpa perantara rumit.",
-    status: "ROADMAP",
-    statusColor: "text-[#b52bff] border-[#b52bff]/30 bg-[#b52bff]/10",
-    gradient: "from-[#ffaa00] to-[#ff0055]"
-  }
-];
-
-export default function Vision() {
+export default function Vision({ content }: { content: SiteContent["vision"] }) {
   return (
     <section id="vision" className="py-xxl bg-[#08132a] relative overflow-hidden border-y border-outline-variant/10">
       {/* Decorative ambient background glows */}
@@ -62,17 +20,17 @@ export default function Vision() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto mb-xxl"
         >
-          <span className="font-label-md text-primary-fixed tracking-[0.25em] uppercase block mb-md">[ peta ekosistem ]</span>
+          <span className="font-label-md text-primary-fixed tracking-[0.25em] uppercase block mb-md">{content.subtitle}</span>
           <h2 className="font-headline-lg text-headline-lg text-primary leading-tight mb-md">
-            Membangun Ekosistem Aplikasi Digital untuk UMKM
+            {content.title}
           </h2>
           <p className="font-body-md text-on-surface-variant leading-relaxed max-w-2xl mx-auto">
-            POS Universal adalah langkah awal kami. Prigel Labs berkomitmen penuh untuk terus berinovasi dan mengembangkan berbagai modul aplikasi terintegrasi guna mendigitalisasi usaha Anda secara menyeluruh.
+            {content.desc}
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl">
-          {visionItems.map((item, i) => (
+          {content.items.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40, scale: 0.95 }}

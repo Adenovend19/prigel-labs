@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const features = [
+const featuresDefault = [
   { icon: "point_of_sale", title: "Manajemen Penjualan", desc: "Catat transaksi dengan cepat dan akurat dalam satu sistem yang mudah digunakan." },
   { icon: "analytics", title: "Laporan Real-time", desc: "Pantau performa bisnis kapan saja dengan data penjualan yang otomatis diperbarui." },
   { icon: "devices", title: "Multi Device", desc: "Dapat digunakan di berbagai perangkat untuk fleksibilitas operasional bisnis." },
@@ -11,7 +11,9 @@ const features = [
   { icon: "shield_with_heart", title: "Aman & Stabil", desc: "Data bisnis tersimpan dengan aman dan sistem berjalan stabil untuk mendukung operasional harian." }
 ];
 
-export default function Products() {
+export default function Products({ content }: { content?: any }) {
+  const activeFeatures = content?.features || featuresDefault;
+
   return (
     <section className="py-xxl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="products">
       
@@ -24,17 +26,17 @@ export default function Products() {
         className="flex flex-col md:flex-row justify-between items-start md:items-center mb-xl gap-lg md:gap-xl"
       >
         <div className="w-full">
-          <span className="font-label-md text-primary-fixed tracking-[0.2em] uppercase block mb-md">Produk Pertama</span>
-          <h2 className="font-headline-lg text-headline-lg text-primary leading-[1.2] pr-0 lg:pr-8">POS Universal: Satu Aplikasi Kasir untuk Semua Jenis Usaha</h2>
+          <span className="font-label-md text-primary-fixed tracking-[0.2em] uppercase block mb-md">{content?.subtitle || "Produk Pertama"}</span>
+          <h2 className="font-headline-lg text-headline-lg text-primary leading-[1.2] pr-0 lg:pr-8">{content?.title || "POS Universal: Satu Aplikasi Kasir untuk Semua Jenis Usaha"}</h2>
         </div>
         <p className="text-on-surface-variant w-full text-left leading-relaxed text-body-sm">
-          POS Universal adalah aplikasi Point of Sale modern yang dirancang untuk berbagai jenis UMKM — mulai dari toko retail, kafe, restoran, hingga usaha rumahan.
+          {content?.desc || "POS Universal adalah aplikasi Point of Sale modern yang dirancang untuk berbagai jenis UMKM — mulai dari toko retail, kafe, restoran, hingga usaha rumahan."}
         </p>
       </motion.div>
 
       {/* Scroll-spy spring entrance animation for each card */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-lg mt-xl">
-        {features.map((feature, i) => (
+        {activeFeatures.map((feature: any, i: number) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 40, scale: 0.95 }}
@@ -68,7 +70,7 @@ export default function Products() {
           whileTap={{ scale: 0.95 }}
           className="bg-primary-fixed text-on-primary-fixed px-xl py-md rounded-lg font-label-md font-bold uppercase tracking-widest text-sm transition-all"
         >
-          Mulai Gunakan POS Universal
+          {content?.ctaText || "Mulai Gunakan POS Universal"}
         </motion.button>
       </motion.div>
     </section>
